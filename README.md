@@ -26,3 +26,6 @@ Sem ruído. Sem perder tempo. Direto no problema.
 
 Chega de perder tempo analisando logs.
 Se a operação parou, precisamos ser rápidos, objetivos e eficientes.
+
+<img width="1447" height="900" alt="havan log viewer" src="https://github.com/user-attachments/assets/46d1d1c3-be2c-494d-ba30-9e67b4b2e085" />
+
