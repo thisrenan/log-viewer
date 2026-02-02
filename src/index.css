@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Havan Design System - Log Viewer */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Havan Brand Colors */
+    --havan-red: 352 100% 42%;
+    --havan-red-dark: 352 100% 36%;
+    --havan-blue: 216 100% 25%;
+    --havan-blue-light: 216 100% 36%;
+    --havan-yellow: 45 100% 50%;
+    
+    /* Semantic Colors */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    --primary: 216 100% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 352 100% 42%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 216 100% 25%;
+
+    --radius: 0.5rem;
+
+    /* LogLevel Colors */
+    --log-error: 0 84% 60%;
+    --log-error-bg: 0 84% 97%;
+    --log-warning: 38 92% 50%;
+    --log-warning-bg: 38 92% 97%;
+    --log-info: 216 100% 50%;
+    --log-info-bg: 216 100% 97%;
+    --log-debug: 220 9% 46%;
+    --log-debug-bg: 220 9% 97%;
+    --log-trace: 220 9% 66%;
+    --log-trace-bg: 220 9% 98%;
+
+    /* Status Colors */
+    --status-success: 142 71% 45%;
+    --status-success-bg: 142 71% 97%;
+    --status-error: 0 84% 60%;
+    --status-error-bg: 0 84% 97%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 60%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 352 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 84%;
+
+    /* LogLevel Colors Dark */
+    --log-error: 0 84% 65%;
+    --log-error-bg: 0 84% 15%;
+    --log-warning: 38 92% 55%;
+    --log-warning-bg: 38 92% 15%;
+    --log-info: 216 100% 60%;
+    --log-info-bg: 216 100% 15%;
+    --log-debug: 220 9% 60%;
+    --log-debug-bg: 220 9% 15%;
+    --log-trace: 220 9% 50%;
+    --log-trace-bg: 220 9% 12%;
+
+    /* Status Colors Dark */
+    --status-success: 142 71% 50%;
+    --status-success-bg: 142 71% 15%;
+    --status-error: 0 84% 65%;
+    --status-error-bg: 0 84% 15%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* AG Grid Theme Customization */
+.ag-theme-alpine,
+.ag-theme-alpine-dark {
+  --ag-font-family: 'Montserrat', system-ui, sans-serif;
+  --ag-font-size: 13px;
+  --ag-grid-size: 6px;
+  --ag-row-height: 40px;
+  --ag-header-height: 44px;
+  --ag-header-foreground-color: hsl(var(--foreground));
+  --ag-header-background-color: hsl(var(--muted));
+  --ag-odd-row-background-color: hsl(var(--background));
+  --ag-row-hover-color: hsl(var(--muted));
+  --ag-selected-row-background-color: hsl(var(--primary) / 0.1);
+  --ag-border-color: hsl(var(--border));
+  --ag-background-color: hsl(var(--card));
+  --ag-foreground-color: hsl(var(--foreground));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Log level row styles */
+.log-row-error {
+  background-color: hsl(var(--log-error-bg)) !important;
+}
+
+.log-row-warning {
+  background-color: hsl(var(--log-warning-bg)) !important;
+}
+
+.log-row-info {
+  background-color: hsl(var(--log-info-bg)) !important;
+}
+
+.log-row-debug {
+  background-color: hsl(var(--log-debug-bg)) !important;
+}
+
+/* Animation utilities */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
